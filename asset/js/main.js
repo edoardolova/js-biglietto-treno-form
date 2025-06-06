@@ -60,7 +60,6 @@ const calculatePrice = (distanceKm, scount)=> {
     }
 }
 
-
 const createTicket = (completeName, km, age) =>{
     ticketNameEl.innerText = completeName;
     ticketTypeEl.innerText = `Biglietto ${age}`;
