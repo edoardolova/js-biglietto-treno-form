@@ -74,26 +74,26 @@ const createTicket = (parent, completeName, km, age) =>{
             <h2 class="text-center mb-2">IL TUO BIGLIETTO</h2>
             <div>
                 <h3 class="mb-2">DETTAGLI PASSEGGERO</h3>
-                <div class="row h-90 border-top border-bottom rounded">
-                    <div class="col-lg-4 d-flex flex-column bg-dark text-white">
+                <div class="row  border-top border-bottom rounded">
+                    <div class="col-lg-4 col-12 h-90 d-flex flex-column bg-dark text-white">
                         <h3 class="mb-auto">NOME PASSEGGERO</h3>
                         <h5 id="ticketName">${completeName}</h5>
                     </div>
-                    <div class="col-lg-2 d-flex flex-column">
+                    <div class="col-lg-2 col-3 d-flex flex-column">
                         <h5 class="mb-auto">Offerta</h5>
-                        <p id="ticketType">Biglietto ${age}</p>
+                        <p class="mb-0" id="ticketType">Biglietto ${age}</p>
                     </div>
-                    <div class="col-lg-2 d-flex flex-column">
+                    <div class="col-lg-2 col-3 d-flex flex-column">
                         <h5 class="mb-auto">Carrozza</h5>
-                        <p id="ticketCarriage">${randInt(9)}</p>
+                        <p class="mb-0" id="ticketCarriage">${randInt(9)}</p>
                     </div>
-                    <div class="col-lg-2 d-flex flex-column">
+                    <div class="col-lg-2 col-3 d-flex flex-column">
                         <h5 class="mb-auto">Codice CP</h5>
-                        <p id="ticketCode">${randInt(99999)}</p>
+                        <p class="mb-0" id="ticketCode">${randInt(99999)}</p>
                     </div>
-                    <div class="col-lg-2 d-flex flex-column">
+                    <div class="col-lg-2 col-3 d-flex flex-column">
                         <h5 class="mb-auto">Costo biglietto</h5>
-                        <p id="ticketPrice">${calculatePrice(km, age)}€</p>
+                        <p class="mb-0" id="ticketPrice">${calculatePrice(km, age)}€</p>
                     </div>
                 </div>
             </div>
