@@ -20,9 +20,57 @@ const NameInputEl = document.getElementById("floatingName");
 const KmInputEl = document.getElementById("floatingKm");
 const ageInputEl = document.getElementById("floatingSelectGrid");
 
+// ticket variable 
+const ticketDivEl = document.getElementById("ticketDiv");
+const ticketNameEl =document.getElementById("ticketName");
+const ticketTypeEl =document.getElementById("ticketType");
+const ticketCarriageEl =document.getElementById("ticketCarriage");
+const ticketCodeEl =document.getElementById("ticketCode");
+const ticketPriceEl =document.getElementById("ticketPrice");
+
+// btn 
+const resetBtnEl = document.getElementById("resetBtn");
+
+
 formEl.addEventListener("submit", (event)=>{
     event.preventDefault();
-    console.log(NameInputEl.value, KmInputEl.value, ageInputEl.value);
-})
+    createTicket(NameInputEl.value, KmInputEl.value, ageInputEl.value);
+});
+
+resetBtnEl.addEventListener("click", ()=>{
+    ticketNameEl.innerText = "";
+    ticketTypeEl.innerText = "";
+    ticketCarriageEl.innerText = "";
+    ticketCodeEl.innerText = "";
+    ticketPriceEl.innerText = "";
+});
+
+const randInt = (max)=> Math.ceil(Math.random()*max);
+
+const calculatePrice = (distanceKm, scount)=> {
+    if (scount === "over") {
+        return ((distanceKm * ticketCostKm) * overScount).toFixed(2);
+    }
+
+    else if (scount === "under") {
+        return ((distanceKm * ticketCostKm) * underScount).toFixed(2); 
+    }
+    else {
+        return (distanceKm * ticketCostKm).toFixed(2);
+    }
+}
+
+
+const createTicket = (completeName, km, age) =>{
+    ticketNameEl.innerText = completeName;
+    ticketTypeEl.innerText = `Biglietto ${age}`;
+    ticketCarriageEl.innerText = randInt(9);
+    ticketCodeEl.innerText = randInt(99999);
+    ticketPriceEl.innerText = `${calculatePrice(km, age)}€`;
+    if (ticketDivEl.classList.contains("d-none")) {
+        ticketDivEl.classList.remove("d-none");
+    }
+
+}
 
 

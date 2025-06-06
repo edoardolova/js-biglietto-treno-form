@@ -11,7 +11,7 @@
     <main class="d-flex flex-column">
         <h1 class="text-center mb-5">CALCOLA IL PREZZO DEL TUO BIGLIETTO</h1>
         <div class="container ms-auto me-auto">
-            <form class="d-flex flex-column " id="ticketForm">
+            <form class="d-flex flex-column border p-3 rounded mb-5" id="ticketForm">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-floating mb-3">
@@ -37,10 +37,39 @@
                     </div>
                 </div>
                 <div class="d-flex mt-3">
-                    <button  class="btn btn-outline-primary w-25 ms-auto me-5" >Genera</button>
-                    <button class="btn btn-outline-primary w-25 me-auto">Annulla</button>
+                    <button  class="btn btn-outline-primary w-25 ms-auto me-5" type="submit">Genera</button>
+                    <button class="btn btn-outline-primary w-25 me-auto" type="button" id="resetBtn">Annulla</button>
                 </div>
             </form>
+        </div>
+
+        <div class="container ms-auto me-auto d-none" id="ticketDiv">
+            <h2 class="text-center mb-2">IL TUO BIGLIETTO</h2>
+            <div>
+                <h3 class="mb-2">DETTAGLI PASSEGGERO</h3>
+                <div class="row h-90 border-top border-bottom rounded">
+                    <div class="col-lg-4 d-flex flex-column bg-dark text-white">
+                        <h3 class="mb-auto">NOME PASSEGGERO</h3>
+                        <h5 id="ticketName">Edoardo Lova</h5>
+                    </div>
+                    <div class="col-lg-2 d-flex flex-column">
+                        <h5 class="mb-auto">Offerta</h5>
+                        <p id="ticketType">Biglietto standard</p>
+                    </div>
+                    <div class="col-lg-2 d-flex flex-column">
+                        <h5 class="mb-auto">Carrozza</h5>
+                        <p id="ticketCarriage">5</p>
+                    </div>
+                    <div class="col-lg-2 d-flex flex-column">
+                        <h5 class="mb-auto">Codice CP</h5>
+                        <p id="ticketCode">92999</p>
+                    </div>
+                    <div class="col-lg-2 d-flex flex-column">
+                        <h5 class="mb-auto">Costo biglietto</h5>
+                        <p id="ticketPrice">3.10€</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
